@@ -25,7 +25,7 @@ def create_app(config_name):
     @app.before_request
     def before_request():
         if request.view_args==None:
-            if session['lang_code']==None:
+            if not 'lang_code' in session.keys():
                 return redirect('/fr' + request.full_path)
             else:
                 return redirect('/'+session['lang_code']+request.full_path)
