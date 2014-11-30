@@ -3,10 +3,8 @@
 import os
 from flask import Flask, g, request, flash, redirect, session
 from config import config
-from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.babel import Babel
 
-db = SQLAlchemy()
 babel = Babel()
 
 def create_app(config_name):
@@ -16,7 +14,6 @@ def create_app(config_name):
     app.config.from_object(config[config_name])
     config[config_name].init_app(app)
 
-    db.init_app(app)
     babel.init_app(app)
 
     from .mod_main import mod_main as main_blueprint

@@ -3,7 +3,6 @@
 # -*- coding: UTF-8 -*-
 
 from . import mod_main
-from .. import db
 from flask import render_template, flash,redirect, request,url_for,g, current_app,session
 from config import Config
 from gettext import gettext
